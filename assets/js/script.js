@@ -1,56 +1,130 @@
-//questiions 
-var questionsArray=[
-{
-     question: "the condition is an if/ else statement is enclosed within?",
-     answer1: "qoutes",
-     answer2: "curly brackets",
-     answer3: "parenthesis",
-     answer4: "squarebrackets",
-     correctAnswer:"blue"
-},
+//questions
+var questions = [
+  {
+    question: "The condition is an if/ else statement is enclosed within?",
+    answer1: "Quotes",
+    answer2: "Curly brackets",
+    answer3: "Parenthesis",
+    answer4: "Square brackets",
+    correctAnswer: "Parenthesis",
+  },
 
-{
-     question: "array in javascript can be used to store?",
-     answer1: "numbers and stings",
-     answer2: "other arrays",
-     answer3: "booleans ",
-     answer4: "all of the above ",
-     correctAnswer:"Elon Musk"
-},
-  
-{
-    question: " string values must be enclosed whitin____ when being assigned to variables?",
+  {
+    question: "Array in javascript can be used to store?",
+    answer1: "Numbers and stings",
+    answer2: "Other arrays",
+    answer3: "Booleans ",
+    answer4: "All of the above ",
+    correctAnswer: "All of the above ",
+  },
+
+  {
+    question:
+      " String values must be enclosed within____ when being assigned to variables?",
     answer1: "Commas",
     answer2: "Curly brackets",
-    answer3: "qoutes ",
-    answer4: "paranthesis ",
-    correctAnswer:"Mark Zuckerberg"
-},
- 
-{
-    question: "a very useful tool used during development and debbuging for printing content to the debugger is ?",
-    answer1: "javascript ",
-    answer2: "terminal/bash",
-    answer3: "for loops",
-    answer4: "console.log",
-    correctAnswer:"Steve Jobs"
+    answer3: "Quotes ",
+    answer4: "Parenthesis ",
+    correctAnswer: "Quotes",
+  },
 
-}]
-console.log(questionsArray)
+  {
+    question:
+      "Avery useful tool used during development and debugging for printing content to the debugger is ?",
+    answer1: "Javascript ",
+    answer2: "Terminal/Bash",
+    answer3: "For loops",
+    answer4: "Console.log",
+    correctAnswer: "Terminal/Bash",
+  },
+];
+
 //variables
-var currentIndex=0
-var timeEl = document.querySelector(".time");
+var currentIndex = 0;
+var timerEl = document.querySelector(".time");
 var questionEl = document.querySelector(".question");
-var answerEl1 = document.querySelector(".answer1");
-var answerEl2 = document.querySelector(".answer2");
-var answerEl3 = document.querySelector(".answer3");
-var answerEl4 = document.querySelector(".answer4");
+var answer1El = document.querySelector(".answer1");
+var answer2El = document.querySelector(".answer2");
+var answer3El = document.querySelector(".answer3");
+var answer4El = document.querySelector(".answer4");
+var startBtn = document.querySelector("#startbtn");
+var answerButtons = document.querySelectorAll(".checkBtn");
+var highScore = document.querySelector("#highscore");
+var gameArea = document.querySelector("#gamearea");
+var submitBtn = document.querySelector("#submitBtn");
+var right = document.querySelector(".right");
 //display questions
-function displayQuestion(){
-   questionEl.textContent = questionsArray[currentIndex].question
-   answer1El.textContent = questionsArray[currentIndex].answer1
-   answer2El.textContent = questionsArray[currentIndex].answer2
-   answer3El.textContent = questionsArray[currentIndex].answer3
-   answer4El.textContent = questionsArray[currentIndex].answer4
+function displayQuestion() {
+  console.log("display question");
+  questionEl.textContent = questions[currentIndex].question;
+  answer1El.textContent = questions[currentIndex].answer1;
+  answer2El.textContent = questions[currentIndex].answer2;
+  answer3El.textContent = questions[currentIndex].answer3;
+  answer4El.textContent = questions[currentIndex].answer4;
 }
-displayQuestion();
+//timer countdown function
+function countdown() {
+  var timeLeft = 45;
+
+  var timeInterval = setInterval(function () {
+    if (timeLeft > 1) {
+      timerEl.textContent = timeLeft + " seconds remaining";
+      timeLeft--;
+    } else if (timeLeft === 1) {
+      timerEl.textContent = timeLeft + " second remaining";
+    } else {
+      timerEl.textContent = "";
+      clearInterval(timeInterval);
+    }
+  }, 1000);
+}
+//--------------------------------
+function show(element) {
+  element.style.display = "block";
+}
+
+function hide(element) {
+  element.style.display = "none";
+}
+function endGame() {
+  show(highScore);
+  hide(gameArea);
+}
+
+answerButtons.forEach(function (ansBtn) {
+  ansBtn.addEventListener("click", function (event) {
+    var userGuess = event.target.textContent;
+    if (userGuess === questions[currentIndex].correctAnswer) {
+      right.textContent = "You got it right!";
+      console.log("You got it right");
+    } else {
+      right.textContent = "YOU GO IT WRONG!!";
+      console.log("WRONG");
+    }
+    currentIndex++;
+    console.log(currentIndex, questions.length);
+    if (currentIndex === questions.length) {
+      console.log("game over");
+      endGame();
+    } else {
+      displayQuestion();
+    }
+  });
+});
+
+startBtn.addEventListener("click", function () {
+  // toggleElementDisplay(messageEl);
+  // toggleElementDisplay(gameEl);
+  show(gameArea);
+  countdown(timerEl);
+  displayQuestion();
+  hide(startBtn);
+});
+submitBtn.addEventListener("click", function () {
+  //grab value of input
+
+  //save local in storage
+  localStorage.setItem("submitBnt");
+});
+hide(highScore);
+hide(gameArea);

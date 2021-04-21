@@ -1,7 +1,7 @@
 # web-code-quiz
 
 \*description
-website is deployable but im having trouble been able to use functions wont be able to get thru this till i go over it with my tutor i was not able to schedule an appointment sooner but it will be resummited
+In this website you will be able to take a short coding quiz to test your knowledge as a web developer you most complete the quiz before the time runs out.
 
 web url-https://jvprofits28.github.io/web-code-quiz/
 repository url-https://github.com/jvprofits28/web-code-quiz
