@@ -7,35 +7,34 @@
     <link rel="stylesheet" type="text/css" href="./assets/style.css" />
     <title>Quiz Challenge</title>
   </head>
+  <header id="header" class="title">
+    <h1>Coding Quiz Challenge</h1>
+  </header>
   <body>
-    <header id="header">
-      <h1>Coding Quiz Challenge</h1>
-      <p>
-        Try to answer the following code-related questions within the time
-        limit.
-      </p>
-      <h3 class="time">Timer:</h3>
-      <div>
-        <button id="startbtn">Start</button>
-      </div>
-    </header>
+    <p>
+      Try to answer the following code-related questions within the time limit.
+    </p>
+    <h3 class="time">Timer:</h3>
+    <div>
+      <button class="startbtn button">Start</button>
+    </div>
     <div id="gamearea">
       <div>
         <h2 class="question">questions</h2>
         <p class="right"></p>
       </div>
       <div id="answers">
-        <button class="answer1 checkBtn"></button>
-        <button class="answer2 checkBtn"></button>
-        <button class="answer3 checkBtn"></button>
-        <button class="answer4 checkBtn"></button>
+        <button class="answer1 checkBtn colorBtn button"></button>
+        <button class="answer2 checkBtn colorBtn button"></button>
+        <button class="answer3 checkBtn colorBtn button"></button>
+        <button class="answer4 checkBtn colorBtn button"></button>
       </div>
     </div>
     <div id="highscore">
       <h3>Game OVER!!</h3>
       <label for="username"> Enter Name</label>
       <input type="text" id="doneinput" name="username" />
-      <button id="submitBtn">submit</button>
+      <button class="submitBtn button">submit</button>
     </div>
 
     <script src="./assets/js/script.js"></script>

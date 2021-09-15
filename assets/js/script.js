@@ -47,11 +47,11 @@ var answer1El = document.querySelector(".answer1");
 var answer2El = document.querySelector(".answer2");
 var answer3El = document.querySelector(".answer3");
 var answer4El = document.querySelector(".answer4");
-var startBtn = document.querySelector("#startbtn");
+var startBtn = document.querySelector(".startbtn");
 var answerButtons = document.querySelectorAll(".checkBtn");
 var highScore = document.querySelector("#highscore");
 var gameArea = document.querySelector("#gamearea");
-var submitBtn = document.querySelector("#submitBtn");
+var submitBtn = document.querySelector(".submitBtn");
 var right = document.querySelector(".right");
 //display questions
 function displayQuestion() {

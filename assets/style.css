@@ -1,0 +1,45 @@
+* {
+  background-color: cornflowerblue;
+}
+.title {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+}
+.colorBtn {
+  background-color: crimson;
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 5px;
+}
+.startbtn {
+  background-color: rgba(31, 252, 2, 0.699);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  border-radius: 5px;
+}
+.submitBtn {
+  background-color: rgba(252, 2, 198, 0.699);
+  border: none;
+  color: white;
+  padding: 10px 24px;
+  box-shadow: black;
+  border-radius: 5px;
+}
+.button {
+  transition-duration: 0.4s;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}
