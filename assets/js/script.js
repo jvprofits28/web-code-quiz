@@ -1,4 +1,4 @@
-//questions
+// questions for the user
 var questions = [
   {
     question: "The condition is an if/ else statement is enclosed within?",
@@ -62,7 +62,7 @@ function displayQuestion() {
   answer3El.textContent = questions[currentIndex].answer3;
   answer4El.textContent = questions[currentIndex].answer4;
 }
-//timer countdown function
+//countdown time
 function countdown() {
   var timeLeft = 45;
 
@@ -78,7 +78,7 @@ function countdown() {
     }
   }, 1000);
 }
-//--------------------------------
+//the start button shows questions once the start button is clicke hide fuction hides question till start is clicked
 function show(element) {
   element.style.display = "block";
 }
@@ -90,7 +90,7 @@ function endGame() {
   show(highScore);
   hide(gameArea);
 }
-
+// compares user answers with the correct answers
 answerButtons.forEach(function (ansBtn) {
   ansBtn.addEventListener("click", function (event) {
     var userGuess = event.target.textContent;
