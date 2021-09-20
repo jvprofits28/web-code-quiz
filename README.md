@@ -2,7 +2,7 @@
 
 ## Description
 
-challenge yourself by answering this code realted quiz lets see what are you capable of. Good luck!!
+challenge yourself by answering this code related quiz lets see what are you capable of. Good luck!!
 
 ## Table of content
 
