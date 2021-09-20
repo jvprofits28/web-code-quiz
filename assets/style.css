@@ -1,5 +1,6 @@
 * {
   background-color: cornflowerblue;
+  font-family: "Roboto Mono", monospace;
 }
 .title {
   display: flex;
